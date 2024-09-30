@@ -1,0 +1,213 @@
+@extends('layouts.schooladmin.app')
+@section('title', 'School Dashboard')
+@push('css')
+@endpush
+{{-- <div class="dashboard-content"> --}}
+@section('content')
+  <style>
+    .nav-tab {
+      overflow-x: auto;
+      display: flex;
+      flex-wrap: nowrap !important;
+    }
+
+    .nav-tab li a {
+      display: flex !important;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+  </style>
+  @if (!$school_exists)
+    <script>
+      alert("You are not authorized");
+      window.location.reload(history.back());
+    </script>
+  @endif
+  <div class="dashboard-content">
+    <div class="container">
+      <h4 class="dashboard-title">Update Details: <span class="text-primary">{{ $school_details->name }}</span></h4>
+      <!-- Dashboard Settings Start -->
+      <div class="dashboard-settings">
+        <!-- Dashboard Tabs Start -->
+        <div class="dashboard-tabs-menu">
+          <ul class="nav-tab">
+            <li style="display : flex ; flex-wrap: nowrap"><a class="active" href="#">About</a></li>
+            <li><a href="{{ route('schooladmin.principal_new.edit', $school_details->id) }}">Principal</a></li>
+            <li><a href="{{ route('schooladmin.contact_new.edit', $school_details->id) }}">Contacts</a></li>
+            <li><a href="{{ route('schooladmin.eligibility_new.edit', $school_details->id) }}">Eligibility</a>
+            </li>
+            <li><a href="{{ route('schooladmin.fees_new.edit', $school_details->id) }}">Fees Structure</a></li>
+            <li><a href="{{ route('schooladmin.opening_hour_new.edit', $school_details->id) }}">Opening
+                Hours</a> </li>
+            <li><a href="{{ route('schooladmin.facilities_new.edit', $school_details->id) }}">Facilities</a>
+            </li>
+            <li><a href="{{ route('schooladmin.gallery_new.edit', $school_details->id) }}">Gallery</a></li>
+          </ul>
+        </div>
+        <!-- Dashboard Tabs End -->
+        <div class="row gy-6">
+          <div class="col-lg-6">
+            <!-- Dashboard Settings Info Start -->
+            <div class="dashboard-content-box">
+              <form action="{{ route('schooladmin.about_new.update') }}" method="POST">
+                <h4 class="dashboard-content-box__title">Basic Information</h4>
+                <p>Provide valid details below to update your school profile</p>
+                @csrf
+                <input type="hidden" name="school_id" value="{{ $id }}">
+                <div class="row gy-4">
+                  <div class="col-md-12">
+                    <!-- Account Account details Start -->
+                    <div class="dashboard-content__input">
+                      <label class="form-label-02">School Name</label>
+                      <input type="text" name="school_name" class="form-control" value="{{ $school_details->name }}">
+                    </div>
+                    <!-- Account Account details End -->
+                  </div>
+                  <div class="col-md-12">
+                    <!-- Account Account details Start -->
+                    <div class="dashboard-content__input">
+                      <label class="form-label-02">Registration Number</label>
+                      <input type="text" class="form-control" name="registration_no"
+                        value="{{ $school_details->registration_no }}">
+                    </div>
+                    <!-- Account Account details End -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="dashboard-content__input">
+                      <label class="form-label-02">School Catagory</label>
+                      <select class="form-select" name="category">
+                        @foreach ($allcategory as $category)
+                          <option value="{{ $category->id }}"
+                            @if ($school_details->categories->id == $category->id) selected="selected"; @endif>
+                            {{ $category->category }}
+                          </option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="dashboard-content__input">
+                      <label class="form-label-02">School Type</label>
+                      <select class="form-select" name="school_type">
+                        <option value="boys" @if ($school_details->school_type == 'boys') selected="selected"; @endif>Boys
+                        </option>
+                        <option value="girls" @if ($school_details->school_type == 'girls') selected="selected"; @endif>Girls
+                        </option>
+                        <option value="co-ed" @if ($school_details->school_type == 'co-ed') selected="selected"; @endif>Co-ed
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="dashboard-content__input">
+                      <label class="form-label-02">Board</label>
+                      <select class="form-select" name="board">
+                        @foreach ($allboards as $board)
+                          <option value="{{ $board->id }}"
+                            @if ($school_details->boards?->id == $board->id) selected="selected"; @endif>
+                            {{ $board->board_name }}
+                          </option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="dashboard-content__input">
+                      <label class="form-label-02">Medium</label>
+                      <select class="form-select" name="medium">
+                        @foreach ($allmedium as $medium)
+                          <option value="{{ $medium->id }}"
+                            @if ($school_details->medium?->id == $medium->id) selected="selected"; @endif>
+                            {{ $medium->medium }}
+                          </option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <!-- Account Account details Start -->
+                    <div class="dashboard-content__input">
+                      <label class="form-label-02">About School (Introduction)</label>
+                      <textarea class="form-control" name="about">{{ $school_details->about }}</textarea>
+                    </div>
+                    <!-- Account Account details End -->
+                  </div>
+                </div>
+                <div class="dashboard-announcement-add__btn mt-5">
+                  <div class="widget-filter__item">
+                  </div>
+                  <button class="btn btn-primary btn-hover-secondary mt-3">Update</button>
+                </div>
+              </form>
+            </div>
+            <!-- Dashboard Settings Info End -->
+          </div>
+          <div class="col-lg-6">
+            <!-- Dashboard Settings Info Start -->
+            <div class="dashboard-content-box">
+              <h4 class="dashboard-content-box__title">Logo</h4>
+              <p>Upload school logo.</p>
+              <style>
+                .dashboard-settings-profile__photo {
+                  top: auto;
+                  left: 50%;
+                  transform: translateX(-50%);
+                }
+
+                .dashboard-settings-profile {
+                  height: 150px;
+                }
+              </style>
+            @if ($errors->any())
+                <div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+              <form method="POST" action="{{route('schooladmin.logo.update')}}" enctype="multipart/form-data">                 
+               {{ csrf_field() }}
+              <input type="hidden" value="{{$id}}" name="school_id"/>
+              <!--<div id="dashboard-profile-cover-photo-editor" class="dashboard-settings-profile">-->
+                <!--<input id="dashboard-photo-dialogue-box" class="dashboard-settings-profile__input" type="file"-->
+                <!--  accept=".png,.jpg,.jpeg" name="logo_school"/>-->
+          
+                <!--<div id="profile-photo" class="dashboard-settings-profile__photo"-->
+                <!--  data-fallback="assets/images/avatar-placeholder.jpg"-->
+                <!--  style="background-image:url(assets/images/avatar-placeholder.jpg)">-->
+                <!--  <div class="overlay">-->
+                <!--    <i class="far fa-camera"></i>-->
+                <!--  </div>-->
+                <!--</div>-->
+                <!--<div id="profile-photo-option" class="dashboard-settings-profile__photo-option">-->
+                <!--  <span class="profile-photo-uploader"><i class="far fa-upload"></i> Upload-->
+                <!--    Photo</span>-->
+                <!--  <span class="profile-photo-deleter"><i class="far fa-trash-alt"></i> Delete</span>-->
+                <!--</div>-->
+              <!--</div>-->
+              <input type="file" name="logo_school"/>
+              <div class="dashboard-announcement-add__btn mt-5">
+                <div class="widget-filter__item">
+                  <input id="categories13" type="checkbox">
+                  <label for="categories13">I agree to the <a href="#">terms & conditions</a>
+                    for updating the school Logo.</label>
+                </div>
+                <button class="btn btn-primary btn-hover-secondary mt-3">Update</button>
+              </div>
+              </form>
+            </div>
+            <!-- Dashboard Settings Info End -->
+          </div>
+        </div>
+      
+      </div>
+      <!-- Dashboard Settings End -->
+    </div>
+  </div>
+@endsection
+{{-- </div> --}}
+<!-- Dashboard Content End -->
+@push('js')
+@endpush

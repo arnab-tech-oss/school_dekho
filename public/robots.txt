@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin
+Disallow: /auth
+Sitemap: https://www.schooldekho.org/sitemap.xml
+Sitemap: https://www.schooldekho.org/sitemaps/school_details.xml

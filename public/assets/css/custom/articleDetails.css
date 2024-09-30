@@ -1,0 +1,290 @@
+.image-wrapper {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    & img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+}
+.avtar-wrapper {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 70px;
+    height: 70px;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+    }
+}
+.sidebar-widget-02__tags li {
+    margin-right: 0;
+}
+.sidebar-widget-02__tags {
+    gap: 5px;
+}
+.title-h1 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-size: clamp(1.75rem, 1.75rem + 2vw, 2rem);
+}
+
+.breadcrumb {
+    flex-wrap: nowrap;
+    & .breadcrumb-item {
+        display: flex;
+        white-space: nowrap;
+    }
+    & .breadcrumb-item.active {
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+    }
+}
+
+article.article {
+    font-family: "Gordita", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+}
+
+article.article br {
+    display: block;
+    content: "\00a0";
+    margin-block: 0.75em 0;
+}
+
+article.article h1,
+article.article h2,
+article.article h3,
+article.article h4,
+article.article h5,
+article.article h6 {
+    margin-block: 1em;
+}
+
+article.article h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+article.article h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+article.article h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+article.article h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+article.article h5 {
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+article.article h6 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+article.article p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    margin-block-end: 1.5em;
+}
+
+article.article a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+article.article a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+article.article ul,
+article.article ol {
+    margin-block-end: 1.5em;
+    padding-inline-start: 1.5em;
+}
+
+article.article li {
+    margin-block: 0.5em;
+}
+
+article.article blockquote {
+    font-style: italic;
+    margin-block: 1.5em;
+    padding-inline-start: 1em;
+    border-inline-start: 4px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 1em;
+}
+
+article.article code,
+article.article pre {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+article.article code {
+    padding: 0.2em 0.4em;
+    font-size: 0.9rem;
+}
+
+article.article pre {
+    padding: 1em;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+}
+
+article.article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: 0 1.5em;
+    font-size: 0.875rem;
+}
+
+article.article th,
+article.article td {
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+article.article th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+article.article tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+article.article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-block: 1.5em;
+    border-radius: 8px;
+}
+
+article.article figure {
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+article.article figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+article.article hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin-block: 1.5em;
+}
+
+article.article b,
+article.article strong {
+    font-weight: bold;
+}
+
+article.article em {
+    font-style: italic;
+}
+
+article.article u {
+    text-decoration: underline;
+}
+
+article.article del {
+    text-decoration: line-through;
+}
+
+article.article mark {
+    background-color: #ffeb3b;
+    padding: 0 0.2em;
+}
+
+article.article small {
+    font-size: 0.8rem;
+}
+
+article.article sup,
+article.article sub {
+    font-size: 0.8rem;
+    line-height: 0;
+}
+
+article.article sup {
+    vertical-align: super;
+}
+
+article.article sub {
+    vertical-align: sub;
+}
+
+@media (max-width: 768px) {
+    article.article {
+        font-size: 0.875rem;
+    }
+
+    article.article h1 {
+        font-size: 1.5rem;
+    }
+
+    article.article h2 {
+        font-size: 1.375rem;
+    }
+
+    article.article h3 {
+        font-size: 1.25rem;
+    }
+
+    article.article h4 {
+        font-size: 1.125rem;
+    }
+
+    article.article h5 {
+        font-size: 1rem;
+    }
+
+    article.article h6 {
+        font-size: 0.875rem;
+    }
+
+    article.article pre,
+    article.article code {
+        font-size: 0.85rem;
+    }
+
+    article.article table {
+        font-size: 0.8125rem;
+        overflow-x: auto;
+    }
+
+    article.article figcaption {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,220 @@
+.intro-part {
+    margin-top: 0px !important;
+}
+
+.product-title {
+    margin-bottom: -1px !important;
+    text-align: center !important;
+}
+
+.product-meta {
+    text-align: center !important;
+}
+
+
+.pac-target-input:not(:-webkit-autofill) {
+    -webkit-animation-name: endBrowserAutofill;
+    animation-name: endBrowserAutofill;
+    min-width: 385px;
+    height: 45px;
+    border-radius: 30px;
+}
+
+.btn-search {
+    border-radius: 0px 30px 30px 0px;
+    padding: 12px 15px;
+    margin: 0;
+    width: 100%;
+    margin-right: -25px;
+    max-width: 115px;
+}
+
+
+.product-img {
+    text-align: -webkit-center;
+}
+
+.product-card {
+    padding-top: 0px !important;
+    text-align: center;
+}
+
+.header-option {
+    top: 42px;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border-radius: 25px;
+}
+
+.product-img img {
+    /* width: 100%; */
+    transition: all linear .5s;
+    /* padding: 20px; */
+    margin: 45px 75px 5px;
+    max-width: 100px;
+    max-height: 100px;
+    text-align: -webkit-center;
+}
+
+.product-image-blog {
+    width: 256px;
+    transition: all linear .5s;
+    padding-bottom: 10px;
+    /* padding: 20px; */
+}
+
+/* .slick-slide img {
+    display: block;
+    width: 256px;
+    padding-top: 0px; 
+    margin-bottom: 20px;
+} */
+.product-media::before {
+    background: none;
+}
+
+@media (min-width: 991px) {
+    .search-btn {
+        padding: 7px 22px;
+        border-radius: 3px;
+    }
+}
+
+.product-type {
+    position: inherit;
+    top: -147px;
+    right: 0px;
+    z-index: 2
+}
+
+/* Added on 1--22 */
+.header-filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    /* padding: 5px; */
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #ccc;
+    /* padding-right: 23px; */
+    max-width: 500px;
+    padding-left: 85px;
+}
+
+.filter-short {
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.filter-select {
+    height: 43px;
+    font-size: 14px;
+    border-radius: 3px;
+    text-transform: capitalize;
+    cursor: pointer;
+    border: none;
+}
+
+.banner-part::before {
+    background: transparent;
+}
+
+.filter-short {
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: 20px; */
+    font-size: 17px;
+    /* margin-bottom: 5px; */
+}
+
+.flat-badge {
+    color: var(--white);
+    padding: 3px 50px;
+    border-radius: 0px 0px 10px 10px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+}
+.inline-custom{
+    display: inline-block;
+}
+.loc-btn{
+    color:rgba(0,69,187, 0.7);
+    /* border: 1px solid rgba(0,69,187, 0.1); */
+    background-color: #fff;
+    margin-bottom: 8px;
+    margin-right: 10px;
+    box-shadow: 0 0 2px #ccc;
+    padding: 4px 15px;
+
+}
+.loc-btn:hover{
+    color:#fff;
+    background-color: #0044bb;
+}
+@media (max-width: 767px) {
+    .loc-btn{
+        color:rgba(0,69,187, 0.7);
+        /* border: 1px solid rgba(0,69,187, 0.1); */
+        background-color: #fff;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        box-shadow: 0 0 2px #ccc;
+        padding: 0px 10px;
+        font-size: 14px;
+    }
+    .loc-btn:hover{
+        color:#fff;
+        background-color: #0044bb;
+    }
+    .mobile-center{
+        text-align: center !important;
+        
+    }
+    .pac-target-input:not(:-webkit-autofill) {
+        min-width: 0px;
+        height: 45px;
+        border-radius: 30px;
+    }
+
+    .header-filter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .header-option {
+        top: 60px;
+    }
+
+    .mob-pad {
+        padding-top: 10px;
+    }
+
+    .flat-badge {
+
+    }
+    .btn-search {
+
+        padding: 10px 15px;
+        margin: 0;
+        width: 100%;
+        max-width: 80px;
+
+    }
+}
+

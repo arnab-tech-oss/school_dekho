@@ -1,0 +1,332 @@
+:root {
+    --nearby-schools-font-size: 12px;
+}
+.tutor-course-top-info__btn > *:last-child {
+    margin-right: 24px !important;
+}
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px; /* Negative margin to create the offset effect */
+}
+.gallery-item {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust the width as desired */
+    margin: 10px; /* Margin to create the offset effect */
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+#fullscreen-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+}
+#fullscreen-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+} /* Style the sticky component */
+#sticky-component {
+    background-color: #f1f1f1;
+}
+.sticky-tab {
+    position: fixed;
+    top: 64px;
+    width: 100%;
+    z-index: 1 !important;
+    -webkit-animation: sticky 1s;
+    animation: sticky 1s;
+}
+@media (max-width: 766px) {
+    .sticky-tab {
+        top: 56px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    .sticky-tab {
+        top: 45px;
+    }
+}
+@media (max-width: 766px) {
+    .nav {
+        flex-wrap: nowrap;
+        overflow: scroll;
+    }
+}
+.center-cropped {
+    object-fit: cover; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    height: 500px;
+    width: 100%;
+}
+.rating {
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+}
+.rating input[type="radio"] {
+    display: none;
+}
+.rating label {
+    font-size: 16px;
+    cursor: pointer;
+    color: #ccc;
+}
+.rating label::before {
+    /* content: ""; */
+    padding: 5px;
+}
+.rating input[type="radio"]:checked ~ label {
+    color: gold;
+}
+.rating label:hover::before,
+.rating label:hover ~ label::before {
+    color: gold;
+}
+.rating {
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+}
+.rating input[type="radio"] {
+    display: none;
+}
+.rating label {
+    font-size: 16px;
+    cursor: pointer;
+    color: #ccc;
+}
+.rating label::before {
+    /* content: ""; */
+    padding: 5px;
+}
+.rating input[type="radio"]:checked ~ label {
+    color: gold;
+}
+.rating label:hover::before,
+.rating label:hover ~ label::before {
+    color: gold;
+}
+.one-edge-shadow {
+    box-shadow: 0 8px 6px -6px #ccc !important;
+    background-color: #fff !important;
+}
+.tutor-course-tabs .nav li button {
+    color: #555;
+}
+.share-review-links {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    font-size: 20px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+}
+.share-review-links li a {
+    font-size: 10px;
+    border: 2px solid #eeeeeeee;
+    padding: 0.5em 1em;
+    border-radius: 999999999px;
+    font-weight: 500;
+    font-size: 12px;
+}
+.share-review-links li a:hover {
+    color: #fff;
+    background-color: #0071dc;
+    border: 2px solid #0071dc;
+}
+.sidebar-widget__course-title a {
+    text-wrap: pretty;
+}
+.tutor-course-tabs .nav li button.active {
+    border-color: #777 !important;
+    color: #fff;
+    background-color: #777;
+}
+.tutor-course-top-info__btn {
+    padding-top: 47px !important;
+}
+.btn-admission {
+    padding: 0 29px !important;
+}
+.btn-claim {
+    border: 1px solid #ddd;
+    padding: 1px 20px;
+    border-radius: 25px;
+}
+.btn-claim:hover {
+    box-shadow: 0 0 5px #ccc;
+}
+.accordion-button {
+    display: flex;
+    justify-content: space-between;
+}
+.click-here {
+    text-underline-offset: 5px;
+    text-decoration: underline;
+    transition: all 0.5s ease;
+}
+.click-here:hover {
+    text-decoration: underline;
+    color: #0071dc;
+}
+.course-curriculum .accordion-button .tutor-icon {
+    margin-right: 0;
+}
+.nearby-schools__address {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.nearby-schools__footer {
+    font-size: var(--nearby-schools-font-size);
+}
+.rating-star.nearby-school-rating-star::before,
+.rating-label.nearby-school-rating-label::before {
+    font-size: var(--nearby-schools-font-size);
+}
+.sidebar-widget__course-content {
+    width: 100%;
+}
+.comment-list-02 li {
+    border-bottom: unset;
+}
+.comment-list-02 li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+@media only screen and (max-width: 767px) {
+    .btn {
+        height: 52px !important;
+    }
+}
+.text-500 {
+    font-weight: 500;
+    color: #999;
+}
+.landscape-image-wrapper {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    & .background-image {
+        background: url("/assets/images/ads/banner.webp") no-repeat left center;
+        background-size: cover;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 5px;
+        z-index: 10;
+    }
+}
+.oneByOne-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    & .background-image {
+        background: url("/assets/images/ads/1x1.webp") no-repeat center center;
+        background-size: cover;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 5px;
+        z-index: 10;
+    }
+}
+.radio-inline {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    gap: 10px;
+    & > label,
+    input[type="radio"] {
+        cursor: pointer;
+    }
+}
+.eligibility-button {
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--bs-gray-100);
+}
+.eligibility-criteria-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+@media only screen and (max-width: 767px) {
+    .eligibility-button {
+        margin-top: 10px;
+    }
+}
+.text-500 {
+    font-weight: 500;
+    color: #999;
+}
+.section-padding-02 {
+    margin-top: 0 !important;
+}
+.h-margin {
+    margin-top: 65px;
+}
+.myApp {
+    background: #fff;
+}
+form-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mobile-sticky-button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.mobile-sticky-button a {
+    width: 100%;
+    border-radius: 0;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+@media (min-width: 768px) {
+    .mobile-sticky-button {
+        display: none;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .copyright-wrapper {
+        display: block;
+        padding-bottom: 55px !important;
+    }
+}
